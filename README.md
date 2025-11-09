@@ -1,5 +1,5 @@
 # Trunq
 
-[![CircleCI](https://circleci.com/gh/prolly-my-fault/trunq.app.svg?style=svg)](https://circleci.com/gh/prolly-my-fault/trunq.app)
+[![Vercel Production Deployment](https://img.shields.io/github/deployments/prolly-my-fault/trunq.app/production?label=vercel&logo=vercel&logoColor=white)](https://www.trunq.app)
 
 ---
