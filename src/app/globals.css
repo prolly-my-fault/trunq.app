@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+:root {
+  /* Light mode colors inspired by the trunq icon */
+  --background: #ffffff;
+  --foreground: #0D4D56;
+
+  /* Primary brand colors - teal/cyan gradient */
+  --primary: #15797F;
+  --primary-dark: #0D4D56;
+  --primary-light: #20C9C9;
+  --accent: #3CDEDE;
+
+  /* Semantic colors */
+  --surface: #f8fafb;
+  --surface-elevated: #f0f5f6;
+  --border: #e0e7e9;
+  --border-hover: #20C9C9;
+
+  /* Text colors */
+  --text-primary: #0D4D56;
+  --text-secondary: #15797F;
+  --text-muted: #6b8a8f;
+
+  /* Interactive states */
+  --hover-bg: #f0f9f9;
+  --active-bg: #e6f5f5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
+  --color-accent: var(--accent);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-border: var(--border);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark mode - deeper, richer teal tones */
+    --background: #0a1415;
+    --foreground: #e6f5f5;
+
+    --primary: #20C9C9;
+    --primary-dark: #15797F;
+    --primary-light: #3CDEDE;
+    --accent: #5ef3f3;
+
+    --surface: #0f1d1f;
+    --surface-elevated: #1a3235;
+    --border: #1a3235;
+    --border-hover: #20C9C9;
+
+    --text-primary: #e6f5f5;
+    --text-secondary: #b3d9db;
+    --text-muted: #6b9a9f;
+
+    --hover-bg: #1a3235;
+    --active-bg: #204548;
+  }
+}
+
+[data-theme="light"] {
+  --background: #ffffff;
+  --foreground: #0D4D56;
+  --primary: #15797F;
+  --primary-dark: #0D4D56;
+  --primary-light: #20C9C9;
+  --accent: #3CDEDE;
+  --surface: #f8fafb;
+  --surface-elevated: #f0f5f6;
+  --border: #e0e7e9;
+  --text-primary: #0D4D56;
+  --text-secondary: #15797F;
+  --text-muted: #6b8a8f;
+  --hover-bg: #f0f9f9;
+  --active-bg: #e6f5f5;
+}
+
+[data-theme="dark"] {
+  --background: #0a1415;
+  --foreground: #e6f5f5;
+  --primary: #20C9C9;
+  --primary-dark: #15797F;
+  --primary-light: #3CDEDE;
+  --accent: #5ef3f3;
+  --surface: #0f1d1f;
+  --surface-elevated: #1a3235;
+  --border: #1a3235;
+  --text-primary: #e6f5f5;
+  --text-secondary: #b3d9db;
+  --text-muted: #6b9a9f;
+  --hover-bg: #1a3235;
+  --active-bg: #204548;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
