@@ -6,10 +6,8 @@ orbs:
 workflows:
   build-test-deploy:
     jobs:
-      - build-and-test:
-          context: context7
+      - build-and-test
       - deploy:
-          context: context7
           requires:
             - build-and-test
           filters:
