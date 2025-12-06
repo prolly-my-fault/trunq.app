@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import { useTheme } from './ThemeProvider';
 import { useSession, signIn, signOut } from 'next-auth/react';
@@ -51,7 +52,7 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-3 cursor-pointer">
+          <Link href="/" className="flex items-center gap-3 cursor-pointer">
             <link
               href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap"
               rel="stylesheet"
@@ -69,12 +70,12 @@ export default function Header() {
               }}>
               Trunq
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
             {menuItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
                 className="text-sm font-medium transition-colors px-3 py-2 rounded-md"
@@ -91,7 +92,7 @@ export default function Header() {
                 }}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -299,7 +300,7 @@ export default function Header() {
           <nav className="md:hidden py-4 border-t"
             style={{ borderColor: '#1a3235' }}>
             {menuItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
                 className="block px-4 py-2 text-sm font-medium transition-colors rounded-md"
@@ -317,7 +318,7 @@ export default function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
         )}
