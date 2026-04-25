@@ -1,0 +1,27 @@
+name: Renovate Dependencies
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 13 * * 1'  # 13:00 UTC = 6:00 AM PST / 9:00 AM EST on Mondays
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Self-hosted Renovate
+        uses: renovatebot/github-action@v46.1.10
+        with:
+          configurationFile: renovate.json
+          token: ${{ secrets.RENOVATE_TOKEN }}
+        env:
+          LOG_LEVEL: 'info'
+          RENOVATE_REPOSITORIES: ${{ github.repository }}
+          RENOVATE_GIT_AUTHOR: 'Renovate Bot <bot@renovateapp.com>'
+          RENOVATE_AUTODISCOVER: 'false'
